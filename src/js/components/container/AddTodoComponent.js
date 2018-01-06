@@ -11,21 +11,23 @@ class AddTodoComponent extends React.Component {
 
   addTodo(e) {
     e.preventDefault()
-    const value = e.target.querySelector('input[name=age]').value;
+    const value = this.inputName.value
 
     this.props.dispatch(addTodo(value))
+    this.inputName.value = '';
   }
 
   render() {
-
-
     let input;
 
     return (
       <div>
         <form onSubmit={this.addTodo}>
-          <input type="text" name={'name'}/>
-          <input type="text" name={'age'}/>
+          <input
+            ref={el => this.inputName = el}
+            type="text"
+            name={'name'}
+          />
           <button type={'submit'}>Toevoegen</button>
         </form>
       </div>
