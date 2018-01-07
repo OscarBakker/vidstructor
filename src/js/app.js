@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import todoReducers from './reducers';
 import TodoApp from "./TodoApp";
-
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 class App extends Component {
   constructor() {
@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-  let store = createStore(todoReducers);
+  let store = createStore(todoReducers, composeWithDevTools());
 
     return (
       <Provider store={store}>

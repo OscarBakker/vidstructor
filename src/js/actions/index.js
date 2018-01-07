@@ -1,3 +1,4 @@
+/* Todos */
 let nextTodoId = 0;
 export const addTodo = text => {
   return {
@@ -20,3 +21,5 @@ export const toggleTodo = id => {
     id
   }
 };
+
+/*  */

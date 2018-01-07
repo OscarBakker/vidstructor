@@ -22,7 +22,12 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
+    "redux-devtools": "file:redux-devtools",
+    "redux-devtools-extension": "^2.13.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.0"
+  },
+  "dependencies": {
+    "reselect": "^3.0.1"
   }
 }

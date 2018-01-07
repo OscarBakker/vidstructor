@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeTodo } from '../../actions'
+import { todosTimesTwo } from '../../selectors';
 
-const TodoList = ({todos, dispatch}) => (
+const TodoList = ({todos, todosTwo, dispatch}) => (
   <div>
-    {todos.map(todo => (
+    {todosTwo.map(todo => (
       <p onClick={() => { dispatch(removeTodo(todo.id)) }} key={todo.id}>{todo.text}</p>
     ))}
   </div>
@@ -12,6 +13,7 @@ const TodoList = ({todos, dispatch}) => (
 
 const mapStateToProps = state => {
   return {
+    todosTwo: todosTimesTwo(state),
     todos: state.todos
   }
 }
